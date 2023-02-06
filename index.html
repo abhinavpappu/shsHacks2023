@@ -38,7 +38,7 @@ rel = "icon>
             <h3 class="mb-5"><em class="text-monospace" style="color: rgb(255,255,255);">March 4-5</em></h3><a class="btn btn-secondary border rounded shadow btn-xl js-scroll-trigger" role="button" href="https://docs.google.com/forms/d/1qLgS4FSyMkOFOXgytpTINq5sN8ZI80GUpx6XjdOftIA/edit">3Sign Up Coming Soon!</a>
             <div class="container">
                 <h1 id="headline" style="color: #c99702; font-family: 'Source Serif Pro', serif;">COUNTDOWN</h1>
-                <div id="demo">
+                <div id="countdown">
                   <ul>
                     <li><span id="days"></span>days</li>
                     <li><span id="hours"></span>hours</li>
@@ -46,30 +46,30 @@ rel = "icon>
                     <li><span id="seconds"></span>seconds</li>
                   </ul>
                 </div>
+                <script>
+                    // Set the date we're counting down to
+                    var countDownDate = new Date("March 4, 2023 12:00:00").getTime();
+                    var x = setInterval(function() {
+                        var now = new Date().getTime();
+                        var distance = countDownDate - now;
+                
+                        document.getElementById("days") = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        document.getElementById("hours") = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        document.getElementById("minutes") = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        document.getElementById("seconds") = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                        // Display the result in the element with id="demo"
+                        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                        + minutes + "m " + seconds + "s ";
+                
+                        // If the count down is finished, write some text
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("countdown").innerHTML = "HAPPY CODING!!";
+                        }
+                    }, 1000);
+                </script>
               </div>
-            <script>
-                // Set the date we're counting down to
-                var countDownDate = new Date("March 4, 2023 12:00:00").getTime();
-                var x = setInterval(function() {
-                    var now = new Date().getTime();
-                    var distance = countDownDate - now;
-            
-                    document.getElementById("days") = Math.floor(distance / (1000 * 60 * 60 * 24));
-                    document.getElementById("hours") = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    document.getElementById("minutes") = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    document.getElementById("seconds") = Math.floor((distance % (1000 * 60)) / 1000);
-            
-                    // Display the result in the element with id="demo"
-                    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-                    + minutes + "m " + seconds + "s ";
-            
-                    // If the count down is finished, write some text
-                    if (distance < 0) {
-                        clearInterval(x);
-                        document.getElementById("demo").innerHTML = "EXPIRED";
-                    }
-                }, 1000);
-            </script>
             <div class="overlay"></div>
         </div>
 <p id="demo"></p>
