@@ -37,33 +37,31 @@ rel = "icon>
             <h1 class="text-monospace mb-1" style="color: #c99702;font-family: 'Source Serif Pro', serif;">shsHacks 2023</h1>
             <h3 class="mb-5"><em class="text-monospace" style="color: rgb(255,255,255);">March 4-5</em></h3><a class="btn btn-secondary border rounded shadow btn-xl js-scroll-trigger" role="button" href="https://docs.google.com/forms/d/1qLgS4FSyMkOFOXgytpTINq5sN8ZI80GUpx6XjdOftIA/edit">SIgn Up Coming Soon!</a>
             <div class="overlay"></div>
+            <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date("March 4, 2023 18:00:00").getTime();
+                var x = setInterval(function() {
+                    var now = new Date().getTime();
+                    var distance = countDownDate - now;
+            
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+                    // Display the result in the element with id="demo"
+                    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+            
+                    // If the count down is finished, write some text
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("demo").innerHTML = "EXPIRED";
+                    }
+                }, 1000);
+            </script>
         </div>
-        <!-- Display the countdown timer in an element -->
 <p id="demo"></p>
-
-    <script>
-    // Set the date we're counting down to
-    var countDownDate = new Date("March 4, 2023 18:00:00").getTime();
-    var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Display the result in the element with id="demo"
-        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-        + minutes + "m " + seconds + "s ";
-
-        // If the count down is finished, write some text
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementById("demo").innerHTML = "EXPIRED";
-        }
-    }, 1000);
-    </script>
     </header>
     <section id="about" class="content-section bg-light" style="height: 700px;">
         <div class="row">
