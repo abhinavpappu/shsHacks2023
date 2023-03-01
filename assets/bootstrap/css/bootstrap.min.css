@@ -17,6 +17,7 @@ table {
 
 td {
   box-shadow: 0 0 10px -4px #000;
+  border-radius: 2vw;
   padding: 10px;
 }
 
